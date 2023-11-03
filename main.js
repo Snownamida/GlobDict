@@ -4,9 +4,9 @@ const OpenAI = require("openai");
 
 const openai = new OpenAI();
 
-async function handleGetGPT(event, prompt, model, role) {
+async function handleGetGPT(event, messages, model) {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: role, content: prompt }],
+    messages: messages,
     model: model,
   });
 

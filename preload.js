@@ -4,8 +4,8 @@ const languages = ["日语", "英语", "法语", "汉语", "越南语", "俄语"
 let input_language = null;
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  getGPT: (prompt, model = "gpt-3.5-turbo", role = "system") =>
-    ipcRenderer.invoke("get-GPT", prompt, model, role),
+  getGPT: (messages, model = "gpt-3.5-turbo") =>
+    ipcRenderer.invoke("get-GPT", messages, model),
   getLanguages: () => languages,
   getInputLanguage: () => input_language,
 });

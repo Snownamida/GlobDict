@@ -13,7 +13,16 @@ function translate() {
       console.log(`请把这个${input_language}词汇"${input}"翻译成${language}`);
       document.querySelector(`.${language}.output`).innerText = " Loading...";
       window.electronAPI
-        .getGPT(`把这个${input_language}词汇"${input}"翻译成${language}`)
+        .getGPT([
+          {
+            role: "system",
+            content: `你是一个词典，用户会不断发送${input_language}词汇，你要把这个${input_language}词汇翻译成${language}，以及它的词源和读音`,
+          },
+          {
+            role: "user",
+            content: `${input}`,
+          },
+        ])
         .then(response => {
           console.log(response);
           document.querySelector(`.${language}.output`).innerHTML = response;
