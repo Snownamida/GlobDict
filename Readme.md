@@ -2,6 +2,10 @@
 
 一个基于 ChatGPT 的多语言词典
 
+A multilingual dictionary based on ChatGPT
+
+[English Readme here](./Readme_en.md)
+
 ![](./demo.gif)
 
 ## 安装方法
@@ -14,7 +18,7 @@
 
 ### Windows
 
-```
+```cmd
 setx OPENAI_API_KEY "your-api-key-here"
 ```
 
