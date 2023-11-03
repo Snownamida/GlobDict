@@ -16,7 +16,7 @@ function translate() {
         .getGPT([
           {
             role: "system",
-            content: `你是一个词典，用户会不断发送${input_language}词汇，你要把这个${input_language}词汇翻译成${language}，以及它的词源和读音`,
+            content: `你是一个词典，用户会不断发送${input_language}词汇，你要把它翻译成${language}，并附上词源和读音`,
           },
           {
             role: "user",
