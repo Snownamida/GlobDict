@@ -2,11 +2,13 @@
 
 一个基于 ChatGPT 的多语言词典
 
+![](./demo.gif)
+
 ## 安装方法
 
 下载 release 里的软件
 
-去 OpenAI 官网申请 API Key
+去 [OpenAI 官网](https://platform.openai.com/account/api-keys)申请 API Key
 
 添加`OPENAI_API_KEY`到环境变量
 
