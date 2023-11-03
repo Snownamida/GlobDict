@@ -14,14 +14,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const translator = document.querySelector(".translator ");
   for (const language of languages) {
     translator.innerHTML += `
-    <div class="row p-2 g-6 align-items-center ${language}">
-        <div class="col-1 text-center">
-            <label class="form-label ${language}">${language} </label>
+    <div class="row gx-3 gy-2 my-3 align-items-center ${language}">
+        <div class="col-lg-1 col-auto text-center">
+            <label class="form-label form-label-lg ${language}">${language}</label>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2 col">
             <input type="text" class="form-control form-control-lg ${language} input" />
         </div>
-        <div class="col">
+        <div class="col-lg">
             <textarea class="form-control ${language} output" rows="3"></textarea >
         </div>
     </div>
