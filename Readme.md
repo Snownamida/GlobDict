@@ -28,7 +28,7 @@ setx OPENAI_API_KEY "your-api-key-here"
 
 在文件的最下方新增一行
 
-```
+```zsh
 export OPENAI_API_KEY='your-api-key-here'
 ```
 

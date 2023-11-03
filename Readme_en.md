@@ -24,7 +24,7 @@ Edit `~/.bash_profile` or `~/.zshrc` file
 
 Add a new line at the bottom of the file
 
-```
+```zsh
 export OPENAI_API_KEY='your-api-key-here'
 ```
 
