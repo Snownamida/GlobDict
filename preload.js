@@ -13,19 +13,20 @@ contextBridge.exposeInMainWorld("electronAPI", {
 window.addEventListener("DOMContentLoaded", () => {
   const translator = document.querySelector(".translator ");
   for (const language of languages) {
-    translator.innerHTML += `
-    <div class="row gx-3 gy-2 my-3 align-items-center ${language}">
-        <div class="col-lg-1 col-auto text-center">
-            <label class="form-label form-label-lg ${language}">${language}</label>
-        </div>
-        <div class="col-lg-2 col">
-            <input type="text" class="form-control form-control-lg ${language} input" />
-        </div>
-        <div class="col-lg">
-            <textarea class="form-control ${language} output" rows="3"></textarea >
-        </div>
-    </div>
-`;
+    translator.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <div class="col-lg-1 col-2 order-1 text-center">
+          <label class="form-label form-label-lg ${language}">${language}</label>
+      </div>
+      <div class="col-lg-2 col-10 order-1">
+          <input type="text" class="form-control form-control-lg ${language} input" />
+      </div>
+      <div class="col-lg-9 col-12 order-3 order-lg-1">
+          <textarea class="form-control ${language} output" rows="3"></textarea >
+      </div>
+`
+    );
   }
 
   for (const language of languages) {
