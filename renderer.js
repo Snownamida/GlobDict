@@ -1,6 +1,8 @@
 const languages = window.electronAPI.getLanguages();
 
 document.querySelector(".translate-button").onclick = translate;
+const lang_select = document.querySelector("select.lang-select");
+lang_select.onchange = () => changeUserLang(lang_select.value);
 
 function translate() {
   input_language = window.electronAPI.getInputLanguage();
@@ -10,7 +12,6 @@ function translate() {
     (input = document.querySelector(`.${input_language}.input`).value)
   ) {
     for (const language of languages) {
-      console.log(`请把这个${input_language}词汇"${input}"翻译成${language}`);
       document.querySelector(`.${language}.output`).innerText = " Loading...";
       window.electronAPI
         .getGPT([
@@ -29,4 +30,8 @@ function translate() {
         });
     }
   } else document.getElementById("output").innerText = "请输入要翻译的词!";
+}
+
+function changeUserLang(selected_lang) {
+  console.log(selected_lang);
 }

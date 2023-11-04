@@ -1,6 +1,14 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
 const languages = ["日语", "英语", "法语", "汉语", "越南语", "俄语"];
+const languages_config = {
+  日语: { lang: "日语", lang_in_lang: "日本語" },
+  英语: { lang: "英语", lang_in_lang: "English" },
+  法语: { lang: "法语", lang_in_lang: "Français" },
+  汉语: { lang: "汉语", lang_in_lang: "中文" },
+  越南语: { lang: "越南语", lang_in_lang: "Tiếng Việt" },
+  俄语: { lang: "俄语", lang_in_lang: "русский" },
+};
 let input_language = null;
 
 contextBridge.exposeInMainWorld("electronAPI", {
@@ -12,7 +20,13 @@ contextBridge.exposeInMainWorld("electronAPI", {
 
 window.addEventListener("DOMContentLoaded", () => {
   const translator = document.querySelector(".translator ");
+  const lang_select = document.querySelector("select.lang-select");
+
   for (const language of languages) {
+    lang_select.insertAdjacentHTML(
+      "beforeend",
+      `<option value=${language}>${languages_config[language].lang_in_lang}</option>`
+    );
     translator.insertAdjacentHTML(
       "afterbegin",
       `
