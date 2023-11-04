@@ -16,18 +16,18 @@ window.addEventListener("DOMContentLoaded", () => {
     translator.insertAdjacentHTML(
       "afterbegin",
       `
-      <div class="col-lg-2 col-3 text-center order-1">
+      <div class="col-md-2 col-3 text-center order-1">
         <label class="form-label form-label-lg ${language}">${language}</label>
       </div>
 
-      <div class="col-lg-2 col-9 order-1">
+      <div class="col-md-2 col-9 order-1">
         <input
           type="text"
           class="form-control form-control-lg ${language} input"
         />
       </div>
       
-      <div class="col-lg-8 col-12 order-3 order-lg-1">
+      <div class="col-md-8 col-12 order-3 order-md-1">
           <textarea class="form-control ${language} output" rows="3"></textarea >
       </div>
 `
