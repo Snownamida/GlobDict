@@ -1,4 +1,4 @@
-const languages = window.electronAPI.getLanguages();
+const languages_config = window.electronAPI.getLanguagesConfig();
 
 document.querySelector(".translate-button").onclick = translate;
 const lang_select = document.querySelector("select.lang-select");
@@ -11,7 +11,7 @@ function translate() {
     input_language &&
     (input = document.querySelector(`.${input_language}.input`).value)
   ) {
-    for (const language of languages) {
+    for (const language of languages_config.汉语.languages) {
       document.querySelector(`.${language}.output`).innerText = " Loading...";
       window.electronAPI
         .getGPT([

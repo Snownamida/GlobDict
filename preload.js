@@ -1,20 +1,79 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
-const languages = ["日语", "英语", "法语", "汉语", "越南语", "俄语"];
+const selected_languages = ["日语", "英语", "法语", "汉语", "越南语", "俄语"];
 const languages_config = {
-  日语: { lang: "日语", lang_in_lang: "日本語" },
-  英语: { lang: "英语", lang_in_lang: "English" },
-  法语: { lang: "法语", lang_in_lang: "Français" },
-  汉语: { lang: "汉语", lang_in_lang: "中文" },
-  越南语: { lang: "越南语", lang_in_lang: "Tiếng Việt" },
-  俄语: { lang: "俄语", lang_in_lang: "русский" },
+  日语: {
+    user_lang: "日语",
+    lang_in_lang: "日本語",
+    languages: [
+      "日本語",
+      "英語",
+      "フランス語",
+      "中国語",
+      "ベトナム語",
+      "ロシア語",
+    ],
+  },
+  英语: {
+    user_lang: "英语",
+    lang_in_lang: "English",
+    languages: [
+      "Japanese",
+      "English",
+      "French",
+      "Chinese",
+      "Vietnamese",
+      "Russian",
+    ],
+  },
+  法语: {
+    user_lang: "法语",
+    lang_in_lang: "Français",
+    languages: [
+      "Japonais",
+      "Anglais",
+      "Français",
+      "Chinois",
+      "Vietnamien",
+      "Russe",
+    ],
+  },
+  汉语: {
+    user_lang: "汉语",
+    lang_in_lang: "中文",
+    languages: ["日语", "英语", "法语", "汉语", "越南语", "俄语"],
+  },
+  越南语: {
+    user_lang: "越南语",
+    lang_in_lang: "Tiếng Việt",
+    languages: [
+      "Tiếng Nhật",
+      "Tiếng Anh",
+      "Tiếng Pháp",
+      "Tiếng Trung",
+      "Tiếng Việt",
+      "Tiếng Nga",
+    ],
+  },
+  俄语: {
+    user_lang: "俄语",
+    lang_in_lang: "русский",
+    languages: [
+      "Японский",
+      "Английский",
+      "Французский",
+      "Китайский",
+      "Вьетнамский",
+      "Русский",
+    ],
+  },
 };
 let input_language = null;
 
 contextBridge.exposeInMainWorld("electronAPI", {
   getGPT: (messages, model = "gpt-3.5-turbo") =>
     ipcRenderer.invoke("get-GPT", messages, model),
-  getLanguages: () => languages,
+  getLanguagesConfig: () => languages_config,
   getInputLanguage: () => input_language,
 });
 
@@ -22,7 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const translator = document.querySelector(".translator ");
   const lang_select = document.querySelector("select.lang-select");
 
-  for (const language of languages) {
+  for (const language of selected_languages) {
     lang_select.insertAdjacentHTML(
       "beforeend",
       `<option value=${language}>${languages_config[language].lang_in_lang}</option>`
@@ -48,7 +107,7 @@ window.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  for (const language of languages) {
+  for (const language of languages_config.汉语.languages) {
     document.querySelector(`.${language}.input`).onfocus = event => {
       if (input_language)
         document.querySelector(
