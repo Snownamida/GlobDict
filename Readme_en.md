@@ -10,6 +10,8 @@ Download the software from the releases
 
 Apply for an API Key at [OpenAI's official website](https://platform.openai.com/account/api-keys)
 
+Please note that your OpenAI API account should have sufficient balance. This software is not free, and the payment goes to OpenAI, not to me.
+
 Add `OPENAI_API_KEY` to the environment variables
 
 ### Windows

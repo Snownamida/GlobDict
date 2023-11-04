@@ -14,6 +14,8 @@ A multilingual dictionary based on ChatGPT
 
 去 [OpenAI 官网](https://platform.openai.com/account/api-keys)申请 API Key
 
+注意，你的OpenAI的API账户里应有余额。即此软件不是免费的，但不是给我钱而是给OpenAI。
+
 添加`OPENAI_API_KEY`到环境变量
 
 ### Windows
