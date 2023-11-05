@@ -17,7 +17,7 @@ async function handleGetGPT(event, messages, model) {
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 1024,
-    height: 840,
+    height: 888,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       icon: path.join(__dirname, "icon.jpg"),
