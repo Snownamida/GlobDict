@@ -6,6 +6,8 @@ const languages_config = {
   日语: {
     user_lang: "日语",
     lang_in_lang: "日本語",
+    prompt: (input_language, output_language) =>
+      `あなたは辞書です。ユーザーは${input_language}の単語を送信し、あなたはそれを${output_language}に翻訳し、語源と発音を添えて返信する必要があります。`,
     languages: {
       日语: { native_lang_name: "日本語" },
       英语: { native_lang_name: "英語" },
@@ -18,6 +20,8 @@ const languages_config = {
   英语: {
     user_lang: "英语",
     lang_in_lang: "English",
+    prompt: (input_language, output_language) =>
+      `You are a dictionary. The user will send a word in ${input_language}, and you need to translate it into ${output_language}, providing the origin and pronunciation.`,
     languages: {
       日语: { native_lang_name: "Japanese" },
       英语: { native_lang_name: "English" },
@@ -30,6 +34,9 @@ const languages_config = {
   法语: {
     user_lang: "法语",
     lang_in_lang: "Français",
+    prompt: (input_language, output_language) =>
+      `Vous êtes un dictionnaire. L'utilisateur enverra un mot en ${input_language}, et vous devrez le traduire en ${output_language} tout en fournissant l'origine et la prononciation.`,
+
     languages: {
       日语: { native_lang_name: "Japonais" },
       英语: { native_lang_name: "Anglais" },
@@ -42,6 +49,8 @@ const languages_config = {
   汉语: {
     user_lang: "汉语",
     lang_in_lang: "中文",
+    prompt: (input_language, output_language) =>
+      `你是一个词典。用户会发送一个${input_language}词汇，你要把它翻译成${output_language}，并附上词源和读音。`,
     languages: {
       日语: { native_lang_name: "日语" },
       英语: { native_lang_name: "英语" },
@@ -54,6 +63,9 @@ const languages_config = {
   越南语: {
     user_lang: "越南语",
     lang_in_lang: "Tiếng Việt",
+    prompt: (input_language, output_language) =>
+      `Bạn là một từ điển. Người dùng sẽ gửi một từ trong ${input_language}, và bạn phải dịch nó sang ${output_language} và kèm theo nguồn gốc và cách phát âm.`,
+
     languages: {
       日语: { native_lang_name: "Tiếng Nhật" },
       英语: { native_lang_name: "Tiếng Anh" },
@@ -66,6 +78,9 @@ const languages_config = {
   俄语: {
     user_lang: "俄语",
     lang_in_lang: "русский",
+    prompt: (input_language, output_language) =>
+      `Вы - словарь. Пользователь отправит слово на ${input_language}, и вам нужно перевести его на ${output_language}, приложив происхождение и произношение.`,
+
     languages: {
       日语: { native_lang_name: "Японский" },
       英语: { native_lang_name: "Английский" },
@@ -112,7 +127,7 @@ window.addEventListener("DOMContentLoaded", () => {
       </div>
       
       <div class="col-md-8 col-12 order-3 order-md-1">
-          <textarea class="form-control ${language} output" rows="3"></textarea >
+          <textarea class="form-control ${language} output" rows="4"></textarea >
       </div>
 `
     );

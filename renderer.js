@@ -15,14 +15,22 @@ function translate() {
   ) {
     for (const language of selected_languages) {
       console.log(
-        `你是一个词典，用户会不断发送${input_language}词汇，你要把它翻译成${language}，并附上词源和读音。注意回答的时候要用${user_lang}回答`
+        languages_config[user_lang].prompt(
+          languages_config[user_lang].languages[input_language]
+            .native_lang_name,
+          languages_config[user_lang].languages[language].native_lang_name
+        )
       );
       document.querySelector(`.${language}.output`).innerText = " Loading...";
       window.electronAPI
         .getGPT([
           {
             role: "system",
-            content: `用户会发送一个${input_language}词汇，你要把它翻译成${language}，并附上词源和读音。回答的时候要用${user_lang}回答`,
+            content: languages_config[user_lang].prompt(
+              languages_config[user_lang].languages[input_language]
+                .native_lang_name,
+              languages_config[user_lang].languages[language].native_lang_name
+            ),
           },
           {
             role: "user",
