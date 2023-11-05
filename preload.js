@@ -7,7 +7,7 @@ const languages_config = {
     user_lang: "日语",
     lang_in_lang: "日本語",
     prompt: (input_language, output_language) =>
-      `あなたは辞書です。ユーザーは${input_language}の単語を送信し、あなたはそれを${output_language}に翻訳し、語源と発音を添えて返信する必要があります。`,
+      `あなたは辞書です。ユーザーが${input_language}の単語を送信すると、それを${output_language}に簡単に翻訳し、${output_language}の単語の語源と発音を添付します。`,
     languages: {
       日语: { native_lang_name: "日本語" },
       英语: { native_lang_name: "英語" },
@@ -21,7 +21,7 @@ const languages_config = {
     user_lang: "英语",
     lang_in_lang: "English",
     prompt: (input_language, output_language) =>
-      `You are a dictionary. The user will send a word in ${input_language}, and you need to translate it into ${output_language}, providing the origin and pronunciation.`,
+      `You are a dictionary. The user will send a ${input_language} word, and you will translate it into ${output_language} briefly, along with the origin and pronunciation of the ${output_language} word.`,
     languages: {
       日语: { native_lang_name: "Japanese" },
       英语: { native_lang_name: "English" },
@@ -35,8 +35,7 @@ const languages_config = {
     user_lang: "法语",
     lang_in_lang: "Français",
     prompt: (input_language, output_language) =>
-      `Vous êtes un dictionnaire. L'utilisateur enverra un mot en ${input_language}, et vous devrez le traduire en ${output_language} tout en fournissant l'origine et la prononciation.`,
-
+      `Vous êtes un dictionnaire. L'utilisateur enverra un mot en ${input_language}, et vous le traduirez en ${output_language} de manière concise, avec l'origine et la prononciation du mot en ${output_language}.`,
     languages: {
       日语: { native_lang_name: "Japonais" },
       英语: { native_lang_name: "Anglais" },
@@ -50,7 +49,7 @@ const languages_config = {
     user_lang: "汉语",
     lang_in_lang: "中文",
     prompt: (input_language, output_language) =>
-      `你是一个词典。用户会发送一个${input_language}词汇，你要把它翻译成${output_language}，并附上词源和读音。`,
+      `你是一个词典。用户会发送一个${input_language}词汇，你简短地把它翻译成${output_language}，并附上${output_language}词的词源和读音。`,
     languages: {
       日语: { native_lang_name: "日语" },
       英语: { native_lang_name: "英语" },
@@ -64,8 +63,7 @@ const languages_config = {
     user_lang: "越南语",
     lang_in_lang: "Tiếng Việt",
     prompt: (input_language, output_language) =>
-      `Bạn là một từ điển. Người dùng sẽ gửi một từ trong ${input_language}, và bạn phải dịch nó sang ${output_language} và kèm theo nguồn gốc và cách phát âm.`,
-
+      `Bạn là một từ điển. Người dùng sẽ gửi một từ ${input_language}, và bạn sẽ dịch nó thành ${output_language} một cách ngắn gọn, kèm theo nguồn gốc và cách phát âm của từ ${output_language}.`,
     languages: {
       日语: { native_lang_name: "Tiếng Nhật" },
       英语: { native_lang_name: "Tiếng Anh" },
@@ -79,8 +77,7 @@ const languages_config = {
     user_lang: "俄语",
     lang_in_lang: "русский",
     prompt: (input_language, output_language) =>
-      `Вы - словарь. Пользователь отправит слово на ${input_language}, и вам нужно перевести его на ${output_language}, приложив происхождение и произношение.`,
-
+      `Вы - словарь. Пользователь отправит слово на ${input_language}, и вы кратко переведете его на ${output_language}, приложив к этому источник и произношение слова на ${output_language}.`,
     languages: {
       日语: { native_lang_name: "Японский" },
       英语: { native_lang_name: "Английский" },
