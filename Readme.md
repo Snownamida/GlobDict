@@ -1,22 +1,29 @@
+**English** | [中文](README.zh-CN.md)
+
 # GlobDict
 
-一个基于 ChatGPT 的多语言词典
+A multilingual dictionary powered by ChatGPT.
 
-A multilingual dictionary based on ChatGPT
+Type a word in one language and GlobDict translates it into all the other supported languages **at once**, complete with each word's **etymology and pronunciation**. The interface language itself is switchable, so you can use the app in whichever language you're most comfortable with.
 
-[English Readme here](./Readme_en.md)
+![demo](./demo.gif)
 
-![](./demo.gif)
+## Features
 
-## 安装方法
+- **Translate into many languages at once** — enter one word and get results across every supported language simultaneously.
+- **More than a translation** — each result includes a short note on the word's origin and how it's pronounced.
+- **Switchable UI language** — the whole interface adapts to the language you pick.
+- **Cross-platform desktop app** — built with Electron (Windows / macOS / Linux).
 
-下载 release 里的软件
+Supported languages: Japanese, English, French, Chinese, Vietnamese and Russian.
 
-去 [OpenAI 官网](https://platform.openai.com/account/api-keys)申请 API Key
+## Installation
 
-注意，你的OpenAI的API账户里应有余额。即此软件不是免费的，但不是给我钱而是给OpenAI。
+1. Download the app from the [releases](https://github.com/Snownamida/GlobDict/releases).
+2. Apply for an API key at [OpenAI's official website](https://platform.openai.com/account/api-keys).
 
-添加`OPENAI_API_KEY`到环境变量
+   Please note that your OpenAI API account should have sufficient balance. This software is not free to run — but the payment goes to OpenAI, not to me.
+3. Add your key as an `OPENAI_API_KEY` environment variable (see below).
 
 ### Windows
 
@@ -24,14 +31,26 @@ A multilingual dictionary based on ChatGPT
 setx OPENAI_API_KEY "your-api-key-here"
 ```
 
-### MacOS
+### macOS
 
-编辑 `~/.bash_profile` 或者 `~/.zshrc` 文件
-
-在文件的最下方新增一行
+Edit your `~/.bash_profile` or `~/.zshrc` file and add a new line at the bottom:
 
 ```zsh
 export OPENAI_API_KEY='your-api-key-here'
 ```
 
-输入命令`source ~/.bash_profile` 或 `source ~/.zshrc`来更新
+Then run `source ~/.bash_profile` or `source ~/.zshrc` to apply it.
+
+## Development
+
+Built with Electron, Bootstrap and the OpenAI SDK.
+
+```bash
+npm install
+npm start          # launch the app (electron-forge)
+npm run make       # build distributable packages
+```
+
+## License
+
+[MIT](./LICENSE.txt) © Snownamida
